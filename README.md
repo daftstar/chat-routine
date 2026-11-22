@@ -2,6 +2,8 @@
 
 A Claude Code skill by Nikhil Daftary.
 
+![Two chat lists side by side. Before: six chats with titles the app guessed, and no way to tell which chats are finished. After: the same chats titled with a status mark, the start date and what each chat produces. Claude sends a closing note, you say yes, and the Checkout error chat changes from + to ✓.](assets/before-after.gif)
+
 If you run many Claude chats at once, your sidebar soon fills with titles that don't tell you which chats are finished. This skill gives every chat a title you can scan at a glance, like `+ · 11-21-26 · Pricing page`, and keeps that title up to date:
 
 - `+` means the chat is still open.
