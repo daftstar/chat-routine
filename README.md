@@ -2,30 +2,53 @@
 
 A Claude Code skill by Nikhil Daftary.
 
-If you run lots of Claude chats at once, the sidebar fills up with titles that tell you nothing. This skill gives every chat a title you can scan, like `+ · 11-21-26 · Pricing page`, and keeps that title honest:
+If you run many Claude chats at once, your sidebar soon fills with titles that don't tell you which chats are finished. This skill gives every chat a title you can scan at a glance, like `+ · 11-21-26 · Pricing page`, and keeps that title up to date:
 
 - `+` means the chat is still open.
-- `✓` means you and Claude agreed the work is done.
-- `✗` means you decided to drop it.
+- `✓` means you and Claude agreed the work in the chat is done.
+- `✗` means you decided to drop the work.
 
-Claude also gives you a short note at the start of each chat (what it found and what it plans to do) and a closing note at the end (what changed, what it checked, and the next steps for you to pick).
+The date in the title is the day the chat started. The last part of the title names what the chat will produce.
 
-## Install
+Claude also sends you a short note when a chat starts and another when the work ends. The opening note says what Claude found in your project and what Claude plans to do. The closing note says what Claude changed, what Claude checked, and which next steps you can pick.
 
-1. Copy the `chat-routine` folder into `~/.claude/skills/`.
-2. Add this line to `~/.claude/CLAUDE.md` so Claude runs the skill in every chat:
+## Install the skill
+
+1. Download this repository.
+2. Copy the `chat-routine` folder into the `skills` folder inside your Claude settings folder. On a Mac or Linux computer, the full path is `~/.claude/skills/chat-routine/SKILL.md`. Create the `skills` folder if you don't have one yet.
+3. Start a new Claude Code chat so Claude loads the new skill.
+
+To confirm the install, type `/chat-routine` in a new chat. If Claude runs the routine, the skill is installed.
+
+## Run the skill in every chat
+
+Claude picks which skills to run based on what you ask, so Claude may skip this skill in some chats. To make Claude run this skill at the start of every chat, add this line to `~/.claude/CLAUDE.md` (create the file if you don't have one):
 
 ```
 Before your first reply in every Claude Code chat, run the chat-routine skill.
 ```
 
-Claude only renames chats on its own in the Claude desktop app. In a terminal, Claude puts the title at the top of its first reply so you can copy it.
+If you'd rather choose which chats get the routine, skip that line and type `/chat-routine` at the start of a chat.
 
-## Make it yours
+## Use the skill
 
-- **Date order.** The title uses month-day-year. Change `MM-DD-YY` and `date +%m-%d-%y` in `SKILL.md` if you prefer another order.
-- **Project tags.** To tag a project's chats, such as with a client's initials, describe the tag in that project's CLAUDE.md. The skill puts the tag between the date and the outcome.
+**Start a chat as you normally would.** Ask Claude for what you need. Before Claude starts on your request, Claude names the chat and sends a two-to-four-line opening note. If the title misses the goal of the chat, tell Claude, and Claude will rename the chat.
+
+**Close the chat when the work is done.** Claude often offers to close the chat once the work looks finished. You can also say "wrap up" or "close" at any time. Claude then checks the work and sends a closing note with numbered next steps, such as committing your changes or archiving the chat. Reply with the numbers you want. Claude changes `+` to `✓` only after you agree the work is done.
+
+**Drop or pause the work.** Say "drop this" to stop for good, and Claude marks the chat `✗` and writes down why you stopped. Say "park this" or "hand this off" to stop for now, and Claude leaves the chat open with `+` and writes a note that lets you or a new chat pick up the work later.
+
+**Keep one goal per chat.** If you raise a new, unrelated goal partway through a chat, Claude suggests a new chat and writes a starting prompt for that chat.
+
+## Where the skill works
+
+In the Claude desktop app, Claude renames each chat for you and can archive finished chats. In the terminal, Claude can't rename a chat, so Claude puts the title at the top of the first reply for you to copy.
+
+## Change the skill to fit you
+
+- **Date order.** The title puts the month first. To put the day first, edit `SKILL.md` and change `MM-DD-YY` to `DD-MM-YY` and `date +%m-%d-%y` to `date +%d-%m-%y`.
+- **Project tags.** To add a tag to one project's chat titles, such as a client's initials, describe the tag in that project's `CLAUDE.md`. Claude then puts the tag between the date and the outcome, like `+ · 11-21-26 · ACME · Onboarding emails`.
 
 ## License
 
-MIT. You can use, change and share this skill, as long as you keep the copyright notice in `LICENSE`.
+This skill uses the MIT license. You can use, change and share the skill, as long as you keep the copyright notice in `LICENSE`.
