@@ -1,0 +1,8 @@
+{
+  "name": "chat-routine",
+  "description": "Gives every Claude Code chat a title you can scan, like + · 11-21-26 · Pricing page, plus a short note when the chat opens and closes.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": { "name": "Nikhil Daftary" },
+  "repository": "https://github.com/daftstar/chat-routine"
+}

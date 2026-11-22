@@ -4,7 +4,7 @@ description: "Run this before your first reply in every Claude Code chat, and ag
 license: MIT
 metadata:
   author: Nikhil Daftary
-  version: "1.0"
+  version: "1.0.0"
 ---
 
 # Chat routine

@@ -14,11 +14,27 @@ Claude also sends you a short note when a chat starts and another when the work 
 
 ## Install the skill
 
-1. Download this repository.
-2. Copy the `chat-routine` folder into the `skills` folder inside your Claude settings folder. On a Mac or Linux computer, the full path is `~/.claude/skills/chat-routine/SKILL.md`. Create the `skills` folder if you don't have one yet.
-3. Start a new Claude Code chat so Claude loads the new skill.
+**As a plugin (recommended).** Type this command in a Claude Code chat:
 
-To confirm the install, type `/chat-routine` in a new chat. If Claude runs the routine, the skill is installed.
+```
+/plugin install chat-routine --marketplace daftstar/chat-routine
+```
+
+If your version of Claude Code doesn't accept that command, type these two commands instead, one at a time:
+
+```
+/plugin marketplace add daftstar/chat-routine
+```
+
+```
+/plugin install chat-routine@nikhil-daftary
+```
+
+A plugin install also lets Claude Code update the skill when a new version comes out.
+
+**By hand.** Download this repository, then copy the `skills/chat-routine` folder into `~/.claude/skills/`. When you finish, the skill file sits at `~/.claude/skills/chat-routine/SKILL.md`. Create the `skills` folder if you don't have one yet.
+
+After either install, start a new Claude Code chat so Claude loads the skill. To confirm the install, type `/chat-routine` in the new chat. If Claude runs the routine, the skill is installed.
 
 ## Run the skill in every chat
 
