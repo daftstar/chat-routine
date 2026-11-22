@@ -1,6 +1,6 @@
 # Chat routine
 
-A Claude Code skill by Nikhil Daftary.
+A Claude Code skill that makes chat naming so so so much easier to follow.
 
 ![Two chat lists side by side. Before: six chats with titles the app guessed, and no way to tell which chats are finished. After: the same chats titled with a status mark, the start date and what each chat produces. Claude sends a closing note, you say yes, and the Checkout error chat changes from + to ✓.](assets/before-after.gif)
 
